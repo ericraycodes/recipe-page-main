@@ -1,0 +1,24 @@
+/* ---  LOCAL FONT DECLARATION   */
+/* "Young Serif" */
+@font-face {
+    font-family: "Young Serif";
+    src: url(./assets/fonts/young-serif/YoungSerif-Regular.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+/* "Outfit Variable", "Outfit Static-Regular" as fallback */
+@font-face {
+    font-family: "Outfit Variable";
+    src: url(./assets/fonts/outfit/Outfit-VariableFont_wght.ttf) format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Outfit Static-Regular";
+    src: url(./assets/fonts/outfit/static/Outfit-Regular.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
