@@ -43,6 +43,33 @@ html {
 }
 * {
   box-sizing: border-box;
+  margin: 0;
+}
+
+/* SHARED / COMMON STYLE RULES */
+/* Parent containers */
+.content-container,
+.heading-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+/* Section containers */
+.supplementary-content-container,
+.ingredients-container,
+.instructions-container,
+.nutrition-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+/* List containers */
+.supplementary-content-container > ul,
+.ingredients-container > ul,
+.instructions-container > ol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
 }
 
 /* Initial Typography */
@@ -61,6 +88,7 @@ aside > h2 {
 }
 p,
 ul,
+ol,
 caption {
   line-height: 1.5;
   color: var(--Stone-600);
@@ -68,31 +96,112 @@ caption {
 
 /* Page background */
 body {
-  /* fill the viewport */
-  margin: 0;
   background-color: var(--Stone-100);
 }
 
-/* ---  RECIPE      */
+/* ---  RECIPE DOCUMENT      */
 .recipe-container {
   /* box width 320px to 720px */
   width: clamp(20rem, 100vw, 45rem);
   background-color: var(--White);
-
-  /* arrange content */
-  padding-inline: 2em;
+  margin-inline: auto;
+  padding-block-end: 1px;
 }
 
-/* Header section */
-.recipe-heading > img {
+/* Banner image */
+.banner-image-container > img {
   /* mobile first: fill the whole screen width */
-  position: relative;
-  width: 100vw;
-  top: 0;
-  right: 2em;
+  width: 100%;
 }
-.recipe-heading > h1 {
-  /* typo */
+
+/* ---  RECIPE CONTENT   */
+.content-container {
+  margin: 2em;
+}
+
+/* Recipe heading */
+.heading-container > h1 {
   font-size: 2.2em;
+  line-height: 1.1;
   color: var(--Stone-900);
+}
+
+/* Supplementary, Preparation time */
+.supplementary-content-container {
+  /* box */
+  background-color: var(--Rose-50);
+  border-radius: 10px;
+  padding: 1.5em;
+}
+.supplementary-content-container > h2 {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: var(--Rose-800);
+}
+
+/* THESE GROUP OF RULES IMITATE THE CHALLENGE DESIGN VISUAL
+  ON BULLETED LISTS */
+ul {
+  list-style: none; /* native list marker is removed */
+  padding-inline-start: 0.5em;
+}
+/* pseudo-class ::before acts as custom list-marker */
+ul > li::before {
+  content: "\2022"; /* code for a bullet marker */
+  font-size: 1.2em;
+  color: var(--Brown-800);
+}
+ul > li {
+  /* arrange the custom marker and text content */
+  display: flex;
+  gap: 1.5em;
+  align-items: center;
+}
+.supplementary-content-container li::before {
+  color: var(--Rose-800);
+}
+
+/* THESE GROUP OF RULES IMITATE THE CHALLENGE DESIGN VISUAL
+  ON THE NUMBERED LIST */
+ol {
+  padding-inline-start: 1.4em;
+}
+ol > li::marker {
+  color: var(--Brown-800);
+  font-weight: 600;
+}
+ol p {
+  padding-inline-start: 1em;
+}
+
+/* Nutrition section */
+caption {
+  text-align: initial;
+  padding-block-end: 1em;
+}
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+tr:not(:last-child) {
+  border-bottom: 1px solid var(--Stone-150);
+}
+td:first-child {
+  padding-inline-start: 2em;
+}
+td {
+  color: var(--Stone-600);
+  padding-block: 0.5em;
+}
+td:last-child {
+  color: var(--Brown-800);
+  font-weight: 600;
+}
+
+/* The horizontal lines */
+hr {
+  background-color: var(--Stone-150);
+  border: none;
+  height: 1px;
 }
