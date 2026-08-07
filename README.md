@@ -52,6 +52,7 @@ This is a solution to the [Recipe page challenge on Frontend Mentor](https://www
   crossorigin="anonymous"
 />
 ```
+
 ```css
 /* "Outfit Variable", "Outfit Static-Regular" as fallback */
 @font-face {
@@ -69,7 +70,9 @@ This is a solution to the [Recipe page challenge on Frontend Mentor](https://www
   font-display: swap;
 }
 ```
-- I have learned to make *pseudo-class* `::before` as a custom list-marker for `<ul>`.
+
+- I have learned to make _pseudo-class_ `::before` as a custom list-marker for `<ul>`.
+
 ```css
 /* THESE GROUP OF RULES IMITATE THE CHALLENGE DESIGN VISUALS
   ON BULLETED LISTS */
@@ -97,13 +100,6 @@ ul > li {
 ### Continued development
 
 - Continuing to work on _Mobile-first Design_.
-
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
 
 ## Author
 
