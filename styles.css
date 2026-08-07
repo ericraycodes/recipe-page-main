@@ -46,8 +46,11 @@ html {
   margin: 0;
 }
 
+/* ---  MOBILE FIRST DESIGN    */
+
 /* SHARED / COMMON STYLE RULES */
 /* Parent containers */
+.recipe-container,
 .content-container,
 .heading-container {
   display: flex;
@@ -101,11 +104,11 @@ body {
 
 /* ---  RECIPE DOCUMENT      */
 .recipe-container {
-  /* box width 320px to 720px */
+  /* box width: 320px to 720px */
   width: clamp(20rem, 100vw, 45rem);
   background-color: var(--White);
   margin-inline: auto;
-  padding-block-end: 1px;
+  padding-block-end: 2em;
 }
 
 /* Banner image */
@@ -116,21 +119,21 @@ body {
 
 /* ---  RECIPE CONTENT   */
 .content-container {
-  margin: 2em;
+  margin-inline: 2em;
 }
 
 /* Recipe heading */
 .heading-container > h1 {
-  font-size: 2.2em;
+  /* font-size: 2.2em; */
+  font-size: clamp(1.75em, min(2.2em, 9.3866vw), 2.2em);
   line-height: 1.1;
   color: var(--Stone-900);
 }
 
 /* Supplementary, Preparation time */
 .supplementary-content-container {
-  /* box */
   background-color: var(--Rose-50);
-  border-radius: 10px;
+  border-radius: 0.75em;
   padding: 1.5em;
 }
 .supplementary-content-container > h2 {
@@ -204,4 +207,26 @@ hr {
   background-color: var(--Stone-150);
   border: none;
   height: 1px;
+}
+
+
+/* ---    WIDER SCREENS DESIGN 
+*
+  Screens wider than 720px
+
+  The styles were to add the spaces and border-radius
+  that were not in the mobile design.
+*/
+@media screen and (min-width: 45rem) {
+  .recipe-container {
+    margin-block: 4em;
+    border-radius: 1.5em;
+    padding-block-start: 2em;
+  }
+  .banner-image-container {
+    margin-inline: 2em;
+  }
+  .banner-image-container > img {
+    border-radius: 0.75em;
+  }
 }
