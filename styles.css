@@ -187,14 +187,14 @@ table {
 tr:not(:last-child) {
   border-bottom: 1px solid var(--Stone-150);
 }
-td:first-child {
-  padding-inline-start: 2em;
-}
-td {
+th {
+  font-weight: 400;
   color: var(--Stone-600);
+  text-align: left;
+  padding-inline-start: 2em;
   padding-block: 0.5em;
 }
-td:last-child {
+td {
   color: var(--Brown-800);
   font-weight: 600;
 }
